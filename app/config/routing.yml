@@ -1,0 +1,3 @@
+luogulite_homepage:
+    resource: '@HomePageBundle/Controller/'
+    type: annotation
