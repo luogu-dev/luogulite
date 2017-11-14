@@ -1,0 +1,14 @@
+{
+  "extends": ["standard"],
+  "plugins": ["html"],
+  "rules": {
+  },
+  "settings": {
+    "html/indent": "+2",
+    "html/report-bad-indent": "error"
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint"
+}
