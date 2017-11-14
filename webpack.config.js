@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry: ['babel-polyfill', './app/Resources/entry_point.js'],
@@ -12,10 +13,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader',
+          fallback: 'vue-style-loader'
+        })
       },
       {
         enforce: 'pre',
@@ -27,17 +28,16 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
+          extractCSS: true
         }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader!eslint-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|semantic)/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
@@ -45,6 +45,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin("luogulite.css"),
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
@@ -52,7 +55,8 @@ module.exports = {
     extensions: ['*', '.js', '.vue', '.json'],
     modules: [
       path.resolve('./app/Resources'),
-      path.resolve('./node_modules')
+      path.resolve('./node_modules'),
+      path.resolve('./semantic/dist')
     ]
   },
   devServer: {
