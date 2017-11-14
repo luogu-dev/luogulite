@@ -1,17 +1,17 @@
 <?php
 
-namespace LuoguLite\ProblemBundle\Controller;
+namespace LuoguLite\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class DefaultController extends Controller
+class UserController extends Controller
 {
     /**
      * @Route("/")
      */
     public function indexAction()
     {
-        return $this->render('ProblemBundle:Default:index.html.twig');
+        return $this->render('UserBundle:Default:index.html.twig');
     }
 }

@@ -1,17 +1,18 @@
-problem:
-    resource: "@ProblemBundle/Controller/"
+luogulite_user:
+    resource: "@UserBundle/Controller/UserController.php"
     type:     annotation
-    prefix:   /
+    prefix:   /user
 
-fos_user:
+luogulite_problem:
+    resource: "@ProblemBundle/Controller/ProblemController.php"
+    type:     annotation
+    prefix:   /problem
+
+luogulite_fos_authentication:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix:   /authentication
 
-luogulite_user:
-    resource: "@UserBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 luogulite_homepage:
-    resource: '@HomePageBundle/Controller/'
+    resource: '@HomePageBundle/Controller/HomePageController.php'
     type: annotation
+    prefix: /
