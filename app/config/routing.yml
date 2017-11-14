@@ -1,3 +1,17 @@
+problem:
+    resource: "@ProblemBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /authentication
+
+luogulite_user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 luogulite_homepage:
     resource: '@HomePageBundle/Controller/'
     type: annotation

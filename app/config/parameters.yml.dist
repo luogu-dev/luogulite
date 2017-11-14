@@ -15,5 +15,8 @@ parameters:
     mailer_user: ~
     mailer_password: ~
 
+    mail_from_address: admin@lite.luogu.org
+    mail_from_user: LuoguLite
+
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
