@@ -47,6 +47,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("luogulite.css"),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+    })
   ],
   resolve: {
     alias: {

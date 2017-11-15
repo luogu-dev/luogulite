@@ -2,7 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -38,6 +37,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        site_name: '%site_name%'
 
 # Doctrine Configuration
 doctrine:
@@ -81,3 +82,5 @@ fos_user:
     from_email:
         address: "%mail_from_address%"
         sender_name: "%mail_from_user%"
+
+ornicar_gravatar: ~

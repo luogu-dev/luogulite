@@ -18,3 +18,8 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    LuoguLite\UserBundle\Controller\:
+        resource: '../../src/UserBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']

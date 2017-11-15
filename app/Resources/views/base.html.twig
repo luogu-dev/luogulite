@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>{% block title %}{% endblock %} - {{ site_name }}</title>
+
+    <link rel="stylesheet" type="text/css" href="/dist/luogulite.css">
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+        .main.container {
+            margin-top: 6em;
+        }
+        .wireframe {
+            margin-top: 2em;
+        }
+        .ui.footer.segment {
+            margin: 3em 0 0;
+            padding: 3em 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ui fixed menu">
+    <div class="ui container">
+        <a href="{{ path('homepage') }}" class="header item">
+            {{ site_name }}
+        </a>
+        <a href="{{ path('homepage') }}" class="item">首页</a>
+        <a href="#" class="item">题库</a>
+        <a href="#" class="item">评测记录</a>
+
+
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <p>Powered by LuoguLite</p>
+        <div class="ui inverted section divider"></div>
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">Site Map</a>
+            <a class="item" href="https://github.com/luogu-dev/luogulite">GitHub</a>
+        </div>
+    </div>
+</div>
+
+<script src="/dist/luogulite.js"></script>
+</body>
 </html>

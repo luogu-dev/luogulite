@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+    <div class="ui main text container">
+        <h1>{{ user.username }}</h1>
+        <img class="ui small circular image" src="{{ gravatar(user.email) }}">
+        <p></p>
+        <p>邮箱: <strong>{{ user.email }}</strong></p>
+        <p>My name is {{ user.username }}. I'm an artist, a performance artist. I'm hired for people to fulfill their fantasies, the deep♂dark♂fantasies.</p>
+    </div>
+{% endblock %}

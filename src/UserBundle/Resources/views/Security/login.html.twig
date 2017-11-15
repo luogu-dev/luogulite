@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}登录{% endblock %}
+
+{% block content %}
+    <div class="ui main text container">
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <h1>登录</h1>
+        <form class="ui form" action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+
+            <div class="field">
+                <label>用户名</label>
+                <input type="text" name="_username" placeholder="用户名" value="{{ last_username }}" required>
+            </div>
+            <div class="field">
+                <label>密码</label>
+                <input type="password" name="_password" placeholder="密码" required>
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <label for="remember_me">记住我</label>
+                    <input id="remember_me" name="_remember_me" type="checkbox" tabindex="0" class="hidden">
+                </div>
+            </div>
+            <button class="ui button" type="submit" name="_submit">登录</button>
+        </form>
+    </div>
+
+{% endblock %}
