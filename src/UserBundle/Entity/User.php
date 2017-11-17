@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="luogulite_user")
  */
-class User extends BaseUser
+class User extends BaseUser implements \JsonSerializable
 {
     /**
      * @var integer
@@ -19,4 +19,11 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    public function jsonSerialize() {
+        return [
+            "id" => $this->getId(),
+            "username" => $this->getUsername()
+        ];
+    }
 }

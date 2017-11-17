@@ -10,5 +10,8 @@
   "env": {
     "browser": true
   },
+  "globals": {
+    "_globals": false
+  },
   "parser": "babel-eslint"
 }

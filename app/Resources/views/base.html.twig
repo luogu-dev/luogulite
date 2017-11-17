@@ -54,7 +54,13 @@
         </div>
     </div>
 </div>
-
+<script>
+    var _globals = {};
+    _globals.route = '{{ app.request.attributes.get('_route')|e('js') }}';
+    _globals.currentUser = JSON.parse('{{ app.user|json_encode|e('js') }}');
+</script>
+{% block pre_scripts %}{% endblock %}
 <script src="/dist/luogulite.js"></script>
+{% block post_scripts %}{% endblock %}
 </body>
 </html>

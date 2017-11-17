@@ -9,5 +9,13 @@
         <p></p>
         <p>邮箱: <strong>{{ user.email }}</strong></p>
         <p>My name is {{ user.username }}. I'm an artist, a performance artist. I'm hired for people to fulfill their fantasies, the deep♂dark♂fantasies.</p>
+
+        <div id="fun"></div>
     </div>
+{% endblock %}
+
+{% block pre_scripts %}
+    <script>
+        _globals.user = JSON.parse('{{ user|json_encode|e('js') }}')
+    </script>
 {% endblock %}
