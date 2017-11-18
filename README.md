@@ -4,7 +4,7 @@
  上可以在线提交程序多种程序源代码，系统对源代码进行编译和执行，并通过预先设计的测试数据来检验程序源代码的正确性。 
 。当然，除了评测代码以外，各种 OJ 还提供别的功能，比如讨论社区、比赛等。
 
-目前有很多著名的 OJ 网站，包括 [洛谷](https://www.luogu.org/)、 [POJ](http://poj.org/)、 [HDOJ](http://acm.hdu.edu.cn) 等。如果同学希望在自己的电脑或者服务器中架设一个 OJ 系统，有很多开源的软件可以使用，例如 [VJ4](https://github.com/vijos/vj4）, [HustOJ](https://github.com/freefcw/hustoj) , [UOJ](https://github.com/vfleaking/uoj) 等等。这些系统已经满足一般情况的使用了。但是我们认为，这些系统在某些方面还有改进的空间。而且洛谷的团队的很好用的功能，也应该加入到这样的开源OJ系统中。基于以上原因，我们决定开坑 [LuoguLite](https://github.com/luogu-dev/luogulite) 。
+目前有很多著名的 OJ 网站，包括 [洛谷](https://www.luogu.org/)、 [POJ](http://poj.org/)、 [HDOJ](http://acm.hdu.edu.cn) 等。如果同学希望在自己的电脑或者服务器中架设一个 OJ 系统，有很多开源的软件可以使用，例如 [VJ4](https://github.com/vijos/vj4), [HustOJ](https://github.com/freefcw/hustoj) , [UOJ](https://github.com/vfleaking/uoj) 等等。这些系统已经满足一般情况的使用了。但是我们认为，这些系统在某些方面还有改进的空间。而且洛谷的团队的很好用的功能，也应该加入到这样的开源OJ系统中。基于以上原因，我们决定开坑 [LuoguLite](https://github.com/luogu-dev/luogulite) 。
 
 LuoguLite 是一个全新的开源 Online Judge 系统。虽然和洛谷本身没有直接的关系，但是其设计中、利用了很多洛谷的思想，并且继承了洛谷优秀的用户体验。无论是跟着我们学习，自己搭建一个 Online Judge 系统，还是直接使用这个开源系统，都有很大的意义。
 
