@@ -39,6 +39,8 @@ twig:
     strict_variables: '%kernel.debug%'
     globals:
         site_name: '%site_name%'
+    form_themes:
+        - 'form/semantic-ui-form-theme.html.twig'
 
 # Doctrine Configuration
 doctrine:

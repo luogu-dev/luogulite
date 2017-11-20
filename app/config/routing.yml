@@ -14,5 +14,10 @@ luogulite_fos_authentication:
 
 luogulite_homepage:
     resource: '@HomePageBundle/Controller/HomePageController.php'
-    type: annotation
-    prefix: /
+    type:     annotation
+    prefix:   /
+
+luogulite_admin_problem:
+    resource: "@ProblemBundle/Controller/ProblemAdminController.php"
+    type:     annotation
+    prefix:   /admin/problem

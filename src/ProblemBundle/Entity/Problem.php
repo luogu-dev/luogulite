@@ -27,49 +27,49 @@ class Problem
      * @ORM\Column(type="string", length=1024, nullable=false)
      * @Assert\Length(min=3, max=1024)
      */
-    protected $title;
+    protected $title = '新建题目';
 
     /**
      * @var string
      *
      * @ORM\Column(type="text")
      */
-    protected $description;
+    protected $description = '';
 
     /**
      * @var string
      *
      * @ORM\Column(type="text")
      */
-    protected $inputFormat;
+    protected $inputFormat = '';
 
     /**
      * @var string
      *
      * @ORM\Column(type="text")
      */
-    protected $outputFormat;
+    protected $outputFormat = '';
 
     /**
      * @var SampleTestcase[]
      *
      * @ORM\Column(type="array")
      */
-    protected $sampleTestcases;
+    protected $sampleTestcases = [];
 
     /**
      * @var string
      *
      * @ORM\Column(type="text")
      */
-    protected $hint;
+    protected $hint = '';
 
     /**
      * @var TestcaseInfo[]
      *
      * @ORM\Column(type="array")
      */
-    protected $testcaseInfo;
+    protected $testcaseInfo = [];
 
     /**
      * @var User
@@ -77,12 +77,12 @@ class Problem
      * @ORM\ManyToOne(targetEntity="LuoguLite\UserBundle\Entity\User")
      * @ORM\JoinColumn(nullable=true)
      */
-    protected $provider;
+    protected $provider = null;
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getId(): int {
+    public function getId(): ?int {
         return $this->id;
     }
 
@@ -208,17 +208,17 @@ class Problem
     }
 
     /**
-     * @return User
+     * @return null|User
      */
-    public function getProvider(): User {
+    public function getProvider(): ?User {
         return $this->provider;
     }
 
     /**
-     * @param User $provider
+     * @param null|User $provider
      * @return Problem
      */
-    public function setProvider(User $provider): Problem {
+    public function setProvider(?User $provider): Problem {
         $this->provider = $provider;
         return $this;
     }

@@ -19,6 +19,12 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
+
+    LuoguLite\ProblemBundle\Controller\:
+        resource: '../../src/ProblemBundle/Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
     LuoguLite\UserBundle\Controller\:
         resource: '../../src/UserBundle/Controller'
         public: true
