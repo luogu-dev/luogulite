@@ -1,5 +1,5 @@
 <?php
-namespace LuoguLite\ProblemBundle\DBAL\Types;
+namespace LuoguLite\ProblemBundle\DBAL\Type;
 
 use Fresh\DoctrineEnumBundle\DBAL\Types\AbstractEnumType;
 

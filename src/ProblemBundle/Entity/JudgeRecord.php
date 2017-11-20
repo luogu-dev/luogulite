@@ -40,7 +40,7 @@ class JudgeRecord
 
     /**
      * @ORM\Column(name="position", type="JudgeRecordStatusType", nullable=false)
-     * @EnumAssert\Enum(entity="LuoguLite\ProblemBundle\DBAL\Types\JudgeRecordStatusType")
+     * @EnumAssert\Enum(entity="LuoguLite\ProblemBundle\DBAL\Type\JudgeRecordStatusType")
      */
     protected $status;
 
