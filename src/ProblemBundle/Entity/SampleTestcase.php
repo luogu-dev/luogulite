@@ -17,33 +17,33 @@ class SampleTestcase
     protected $output;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getInput(): string {
+    public function getInput(): ?string {
         return $this->input;
     }
 
     /**
-     * @param string $input
+     * @param string|null $input
      * @return SampleTestcase
      */
-    public function setInput(string $input): SampleTestcase {
+    public function setInput(?string $input): SampleTestcase {
         $this->input = $input;
         return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOutput(): string {
+    public function getOutput(): ?string {
         return $this->output;
     }
 
     /**
-     * @param string $output
+     * @param string|null $output
      * @return SampleTestcase
      */
-    public function setOutput(string $output): SampleTestcase {
+    public function setOutput(?string $output): SampleTestcase {
         $this->output = $output;
         return $this;
     }
