@@ -3,31 +3,19 @@
 namespace LuoguLite\ProblemBundle\Controller;
 
 use LuoguLite\ProblemBundle\Entity\Problem;
-use LuoguLite\ProblemBundle\EntityManager\ProblemManager;
 use LuoguLite\ProblemBundle\Form\Type\ProblemType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ProblemAdminController extends Controller
+class ProblemAdminController extends AbstractProblemController
 {
     /**
-     * @var ProblemManager
+     * @Route("/edit/{id}", name="problemadmin_edit")
      */
-    private $problemManager;
-
-    public function __construct(ProblemManager $problemManager)
+    public function editAction(int $id, Request $request)
     {
-        $this->problemManager = $problemManager;
-    }
-
-    /**
-     * @Route("/edit/{pid}", name="problemadmin_edit")
-     */
-    public function editAction(int $pid, Request $request)
-    {
-        $problem = $this->problemManager->get($pid);
+        $problem = $this->problemManager->get($id);
         if(!$problem)
             return new NotFoundHttpException;
 

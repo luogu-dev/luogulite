@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new LuoguLite\HomePageBundle\HomePageBundle(),
             new LuoguLite\UserBundle\UserBundle(),
             new LuoguLite\ProblemBundle\ProblemBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

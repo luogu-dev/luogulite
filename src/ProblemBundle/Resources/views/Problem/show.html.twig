@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}#{{ problem.id }} - {{ problem.title }}{% endblock %}
+
+{% block content %}
+    <style>.problem-info p { font-size: 1.2em; }</style>
+    <div class="ui main container">
+        <h1>#{{ problem.id }} - {{ problem.title }}</h1>
+        <div class="problem-info" id="problem-description">
+            {{ problem.description|markdown }}
+        </div>
+        {% if problem.inputFormat %}
+            <h2>输入格式</h2>
+            <div class="problem-info" id="problem-input-format">
+                {{ problem.inputFormat|markdown }}
+            </div>
+        {% endif %}
+        {% if problem.outputFormat %}
+            <h2>输出格式</h2>
+            <div class="problem-info" id="problem-output-format">
+                {{ problem.outputFormat|markdown }}
+            </div>
+        {% endif %}
+        {% if problem.sampleTestcases %}
+            <h2>样例</h2>
+            {% for sample in problem.sampleTestcases %}
+                <h3>#{{ loop.index0 }}</h3>
+                <div class="ui segment" style="white-space: pre;">{{ sample.input }}</div>
+                <div class="ui segment" style="white-space: pre;">{{ sample.output }}</div>
+            {% endfor %}
+        {% endif %}
+        {% if problem.hint %}
+            <h2>提示</h2>
+            <div class="problem-info" id="problem-hint">
+                {{ problem.hint|markdown }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

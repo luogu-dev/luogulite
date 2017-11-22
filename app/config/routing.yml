@@ -21,3 +21,8 @@ luogulite_admin_problem:
     resource: "@ProblemBundle/Controller/ProblemAdminController.php"
     type:     annotation
     prefix:   /admin/problem
+
+luogulite_api_problem:
+    resource: "@ProblemBundle/Controller/ProblemAPIController.php"
+    type:     annotation
+    prefix:   /api/problem

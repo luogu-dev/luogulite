@@ -10,7 +10,7 @@ use LuoguLite\UserBundle\Entity\User;
  * @ORM\Entity
  * @ORM\Table(name="luogulite_problem")
  */
-class Problem
+class Problem implements \JsonSerializable
 {
     /**
      * @var integer
@@ -221,5 +221,17 @@ class Problem
     public function setProvider(?User $provider): Problem {
         $this->provider = $provider;
         return $this;
+    }
+
+    public function serializeForList() {
+        return [
+            "id" => $this->getId(),
+            "title" => $this->getTitle(),
+            "provider" => $this->getProvider()
+        ];
+    }
+
+    public function jsonSerialize() {
+        return $this->serializeForList();
     }
 }
